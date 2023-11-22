@@ -50,6 +50,8 @@
     * [vk](#vk)
 5. [notify](#notify)
     * [listen](#listen)
+6. [vk](#vkrouter)
+    * [purchase](#purchase)
 
 ## **Введение** <a id="Introduction"></a>
 
@@ -1312,5 +1314,14 @@ vk_user_id=494075&vk_app_id=6736218&vk_is_app_user=1&vk_are_notifications_enable
 После того, как пользователь ознакомился с информацией в уведомлении, необходимо послать через сокет ``json``, содержащий поле **message_id**, для того, чтобы пометить соощение прочитанным.
 
 
+## **vk** <a id="vkrouter"></a>
+
+### **/purchase** <a id="purchase"></a>
+
+* Тип звпроса: **POST**
+
+Данный запрос предназначен для обработки покупок при помощи голосов Вконтакте. Всю необходимую информацию можно найти по адресу https://dev.vk.com/ru/api/payments/notifications/overview.
+
+Важно заметить, что поддерживаются лишь два типа уведомлений: **get_item** и **order_status_change** (а также их версии для тестирования). Также значение *refunded* параметра **status** для уведомления **order_status_change** не поддерживается.
 
 
